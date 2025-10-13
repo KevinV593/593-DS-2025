@@ -1,22 +1,17 @@
-#include "Fraccion.h"
 #include <iostream>
+#include "Fraccion.h"
 using namespace std;
 
 int main() {
-    cout << "--- Fracción con enteros ---" << endl;
-    Fraccion<int> f1 = Fraccion<int>::mostrar();
+    Fraccion<int> f1, f2, resultado;
 
-    cout << "--- Fracción con decimales ---" << endl;
-    Fraccion<float> f2 = Fraccion<float>::crear();
+    f1 = f1.crear();       // crear() returns Fraccion<int>
+    f2 = f2.crear();
+    resultado = f1.multiplicar(f2);
 
-    cout << "Fracción 1: ";
-    f1.mostrar();
-    cout << "Fracción 2: ";
-    f2.mostrar();
-
-    auto resultado = f1.multiplicar(f2);
-    cout << "Multiplicación: ";
+    cout << "Resultado: ";
     resultado.mostrar();
+    cout << endl;
 
     return 0;
 }

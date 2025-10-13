@@ -33,6 +33,7 @@ T Fraccion<T>::getNumerador() const {
 template <typename T>
 T Fraccion<T>::getDenominador() const {
     return denominador;
+}
 
 template <typename T>
 void Fraccion<T>::setNumerador(T numerador) {
@@ -58,9 +59,9 @@ Fraccion<T> Fraccion<T>::crear() {
         cout << "Ingrese el numerador: ";
         getline(cin, input);
         stringstream ss(input);
-        
+
         if (!(ss >> numerador) || !(ss.eof())) {
-            std::cout << "Invalido. Solo se permiten números." << endl;
+            cout << "Invalido. Solo se permiten números." << endl;
         } else break;
     } while (true);
 
@@ -79,10 +80,10 @@ Fraccion<T> Fraccion<T>::crear() {
 
 template <typename T>
 Fraccion<T> Fraccion<T>::multiplicar(Fraccion<T> otraFraccion){
-    return Fraccion<T>(numerador * otraFraccion.getnumerador(), denominador * otraFraccion.getDenominador());
-};
+    return Fraccion<T>(numerador * otraFraccion.getNumerador(), denominador * otraFraccion.getDenominador());
+}
 
 template <typename T>
-void Fraccion<T>::mostrar() const {
+void Fraccion<T>::mostrar() {
     cout << getNumerador() << "/" << getDenominador() << endl;
-}};
+};
