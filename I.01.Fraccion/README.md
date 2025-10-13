@@ -1,0 +1,1 @@
+ g++ Fraccion.cpp main.cpp -o main.exe

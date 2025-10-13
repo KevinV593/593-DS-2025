@@ -5,9 +5,9 @@ using namespace std;
 int main() {
     Fraccion fraccion1, fraccion2, resultado;
 
-    cout << "Creación de la primera fracción:" << endl;
+    cout << "CREACION DE Fraccion1:" << endl;
     fraccion1 = fraccion1.crear();
-    cout << "Creación de la segunda fracción:" << endl;
+    cout << "CREACION DE Fraccion2:" << endl;
     fraccion2 = fraccion2.crear();
     resultado = fraccion1.multiplicar(fraccion2);
 
