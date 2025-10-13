@@ -1,5 +1,8 @@
 #include "Fraccion.h"
 #include <iostream>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
 Fraccion::Fraccion(int numerador, int denominador) {
@@ -43,28 +46,32 @@ void Fraccion::setNumerador(int numerador) {
    
 Fraccion Fraccion::crear(){
     int numerador, denominador;
+    string input;
     
     do {
         cout << "Ingrese el numerador (entero): ";
-        if (!(cin >> numerador)) {
+        getline(cin, input);
+        
+        stringstream ss(input);
+        if (!(ss >> numerador) || !(ss.eof())) {
             cout << "Invalido. Solo se permiten números enteros." << endl;
-            cin.clear();                
-            cin.ignore(999, '\n');    
         } else {
             break;
         }
     } while (true);
 
-   do {
-       cout << "Ingrese el denominador (entero, distinto de cero): ";
-       if (!(cin >> denominador) || denominador == 0) {
-           cout << "Invalido. Solo se permiten números enteros, ni el cero." << endl;
-           cin.clear();
-           cin.ignore(999, '\n');
-       } else {
-           break;
-       }
-   } while (true);
+    do {
+        cout << "Ingrese el denominador (entero, distinto de cero): ";
+        getline(cin, input);
+
+        stringstream ss(input);
+
+        if (!(ss >> denominador) || !(ss.eof()) || denominador == 0) {
+            cout << "Invalido. Solo se permiten números enteros distintos del cero." << endl;
+        } else {
+            break;
+        }
+    } while (true);
 
     return Fraccion(numerador, denominador);
 }
