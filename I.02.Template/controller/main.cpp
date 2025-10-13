@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Fraccion.h"
+#include "../model/Fraccion.h"
+
 using namespace std;
 
 int main() {

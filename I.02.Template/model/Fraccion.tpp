@@ -26,19 +26,13 @@ Fraccion<T>::~Fraccion(){
 };  
 
 template <typename T>
-T Fraccion<T>::getNumerador() const {
-    return numerador;
-}
+T Fraccion<T>::getNumerador() const { return numerador; }
 
 template <typename T>
-T Fraccion<T>::getDenominador() const {
-    return denominador;
-}
+T Fraccion<T>::getDenominador() const { return denominador; }
 
 template <typename T>
-void Fraccion<T>::setNumerador(T numerador) {
-    this->numerador = numerador;
-}
+void Fraccion<T>::setNumerador(T numerador) { this->numerador = numerador; }
 
 template <typename T>
 void Fraccion<T>::setDenominador(T denominador) {

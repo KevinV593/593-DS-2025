@@ -1,0 +1,32 @@
+//Overloading
+#include <iostream>
+using namespace std;
+
+int suma(int a, int b, int c) {
+    return a + b + c;
+}
+
+float suma(float a, float b, float c) {
+    return a + b + c;
+}
+
+double suma(double a, double b, double c) {
+    return a + b + c;
+}
+
+//Template (mismo tipo)
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T suma(T a, T b, T c) {
+    return a + b + c;
+}
+
+int main() {
+    cout << suma(1, 2, 3) << endl;           // int
+    cout << suma(1.1, 2.2, 3.3) << endl;     // double
+    cout << suma(1.5f, 2.5f, 3.5f) << endl;  // float
+}
+
+#Los Methods admiten cualquier tipo de dato
