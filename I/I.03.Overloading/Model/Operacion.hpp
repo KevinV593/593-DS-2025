@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Operacion {
 public:
     template <typename T1>
