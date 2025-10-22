@@ -1,2 +1,2 @@
-# 593-DS-2025
+# 593-Strcutura's-2025
 Estructura de Datos
