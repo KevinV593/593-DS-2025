@@ -15,6 +15,7 @@ class Matriz {
 
     void llenar();
     void mostrar() const;
+    T trazaDiagonal() const;
 
     int getProfundidad() const { return profundidad; };
     int getFilas() const { return filas; };

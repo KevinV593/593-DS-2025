@@ -69,7 +69,6 @@ void Matriz<T>::mostrar() const {
 
         if (i == profundidad) return;
 
-        // Cuando llegamos al final de una fila, pasamos a la siguiente
         if (j == filas) {
             cout << "\n";
             self(i + 1, 0, 0, self); 
@@ -94,4 +93,29 @@ void Matriz<T>::mostrar() const {
     };
 
     recorrer(0, 0, 0, recorrer);
+};
+
+template <typename T>
+T Matriz<T>::trazaDiagonal() const {
+    T traza = T();
+
+    auto recorrer = [&](int i, int j, auto&& self) -> void {
+        if (i >= profundidad) return;
+
+        if(j >= filas || j >=columnas) {
+            self(i + 1,0, self);
+            return;
+        }
+        
+        traza += *(*(*(celda + i) + j) + j);
+
+        self(i,j + 1, self);
+
+    };
+
+    recorrer(0,0,recorrer);
+
+    cout<<"Traza Diagonal Total es: "<< traza << endl;
+    
+    return traza;
 };
